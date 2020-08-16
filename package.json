@@ -1,10 +1,11 @@
 {
-  "name": "fazt",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "imparando",
+  "version": "0.0.1",
+  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
