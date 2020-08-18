@@ -1,0 +1,129 @@
+* {}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'arial';
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  position: relative;
+}
+.left {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+.right {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.right li, .left li {
+  margin: 0 2em;
+}
+
+.title {
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea, button {
+  border: 1.5px solid #ccc;
+  padding: 0;
+  width: 100%;
+  outline: none;
+}
+
+.input {
+  margin: 0 0 2em;
+}
+.input button,
+.input input {
+  height: 3em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  width: 400px;
+  border: 2px solid #dce;
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.card .card-header {
+  background-color: #edd;
+  display: flex;
+  height: 40px;
+}
+
+.card .title {
+  width: 85%;
+  line-height: 40px;
+}
+.card .action {
+  width: 15%;
+  background-color: #dde;
+  border: 1px solid black;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.card .card-description {
+  height: 50px;
+}
+
+.delete-action {
+  height: 40px;
+  width: 75%;
+  margin:0 auto;
+  color: #fff;
+  background-color: #dd00ac;
+  border: 1px solid black;
+}
+
+.dropdown:hover .internal {
+}
+
+.internal {
+  position: absolute;
+  top: 100%;
+  right: 12%;
+  padding: 0;
+  list-style-type: none;
+  background-color: #eee;
+  text-transform: capitalize;
+}
+
+.internal li {
+  margin: 0 2em;
+  height: 2em;
+  line-height: 2em;
+}

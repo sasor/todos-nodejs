@@ -1,0 +1,20 @@
+<div class="container">
+  <section class="title">
+    <h4>Lista de notas</h4>
+  </section>
+  <section class="grid">
+    {{#each notes}}
+    <div class="card">
+      <div class="card-header">
+        <span class="title">{{title}}</span>
+        <a href="/note/{{_id}}/edit" class="action">edit</a>
+      </div>
+      <hr>
+      <div class="card-description">{{description}}</div>
+      <form action="/note/{{_id}}?_method=DELETE" method="POST">
+        <button class="delete-action">eliminar</button>
+      </form>
+    </div>
+    {{/each}}
+  </section>
+</div>

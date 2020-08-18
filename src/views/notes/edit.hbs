@@ -1,0 +1,18 @@
+<div class="container">
+  <section class="title">
+    <h4>Editar nota</h4>
+  </section>
+  <section>
+    <form action="/note/{{note._id}}?_method=PUT" method="POST">
+      <div class="input">
+        <input type="text" name="title" value="{{note.title}}">
+      </div>
+      <div class="input">
+        <textarea name="description" cols="30" rows="10">{{note.description}}</textarea>
+      </div>
+      <div class="input">
+        <button>guardar</button>
+      </div>
+    </form>
+  </section>
+</div>
