@@ -1,0 +1,34 @@
+<div class="container">
+  <section class="title">
+    <h4>Registrarse</h4>
+  </section>
+  <section>
+    <form action="/user/signup" method="POST">
+      <div class="input">
+        <input type="text"
+               name="name"
+               value="{{user.name}}"
+               placeholder="Nombre">
+      </div>
+      <div class="input">
+        <input type="email"
+               name="email"
+               value="{{user.email}}"
+               placeholder="Correo Electronico">
+      </div>
+      <div class="input">
+        <input type="password"
+               name="password"
+               placeholder="Contrasenia">
+      </div>
+      <div class="input">
+        <input type="password"
+               name="confirm_password"
+               placeholder="Confirmar contrasenia">
+      </div>
+      <div class="input">
+        <button>registrar</button>
+      </div>
+    </form>
+  </section>
+</div>

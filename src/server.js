@@ -5,6 +5,7 @@ const path = require('path')
 const flash = require('connect-flash')
 const session = require('express-session')
 const noteRoutes = require('./modules/notes/route')
+const userRoutes = require('./modules/users/route')
 const app = express()
 
 // Settings
@@ -41,5 +42,6 @@ app.get('/about', (req, res) => {
   res.render('about')
 })
 app.use('/note', noteRoutes)
+app.use('/user', userRoutes)
 
 module.exports = app
