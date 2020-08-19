@@ -4,9 +4,11 @@ const movr = require('method-override')
 const path = require('path')
 const flash = require('connect-flash')
 const session = require('express-session')
+const passport = require('passport')
 const noteRoutes = require('./modules/notes/route')
 const userRoutes = require('./modules/users/route')
 const app = express()
+require('./modules/passport/index')
 
 // Settings
 app.set('views', path.join(__dirname, 'views'))
@@ -26,9 +28,13 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }))
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(flash())
 app.use((req, res, next) => {
   res.locals.alert = req.flash('alert')
+  res.locals.flash = req.flash('error')
+  res.locals.user = req.user || null
   next()
 })
 

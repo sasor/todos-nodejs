@@ -1,4 +1,5 @@
 const User = require('./model')
+const passport = require('passport')
 
 const renderSignUp = (req, res) => {
   res.render('users/signup')
@@ -24,7 +25,7 @@ const signUp = async (req, res) => {
   } else {
     await user.save()
     req.flash('alert', 'registrado exitosamente')
-    res.render('users/signin', {email}).end()
+    res.render('users/signin', {email})
   }
 }
 
@@ -32,12 +33,15 @@ const renderSignIn = (req, res) => {
   res.render('users/signin')
 }
 
-const signIn = (req, res) => {
-  res.send({success:true, method:'singin'})
-}
+const signIn = passport.authenticate('local', {
+  failureRedirect: '/user/signin',
+  successRedirect: '/note/index',
+  failureFlash: true
+})
 
 const logout = (req, res) => {
-  res.send({success:true, method:'edit'})
+  req.logout()
+  res.redirect('/user/signin')
 }
 
 module.exports = {renderSignUp, renderSignIn, signUp, signIn, logout}
