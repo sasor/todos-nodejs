@@ -1,4 +1,5 @@
 const {Router} = require('express')
+const isAuth = require('../../middlewares/index')
 const {
   index,
   create,
@@ -10,12 +11,12 @@ const {
 } = require('./controller')
 const router = Router()
 
-router.get('/index', index)
-router.get('/create', create)
-router.post('/', save)
-router.get('/:id', show)
-router.get('/:id/edit', edit)
-router.put('/:id', update)
-router.delete('/:id', destroy)
+router.get('/index', isAuth, index)
+router.get('/create', isAuth, create)
+router.post('/', isAuth, save)
+router.get('/:id', isAuth, show)
+router.get('/:id/edit', isAuth, edit)
+router.put('/:id', isAuth, update)
+router.delete('/:id', isAuth, destroy)
 
 module.exports = router
