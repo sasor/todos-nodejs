@@ -6,6 +6,7 @@ mongoose
 express-handlebars
 express-session
 method-override
+connect-flash
 bcryptjs
 passport
 passport-local
